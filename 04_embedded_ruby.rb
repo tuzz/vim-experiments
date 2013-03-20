@@ -5,3 +5,6 @@ Vim::Buffer.current.line = ">>> Hello, embedded Ruby!"
 
 cursor = Vim::Window.current.cursor
 Vim::Buffer.current.append(5, ">>> Cursor at: #{cursor.inspect}")
+
+# Run Ctrl-w v in normal mode.
+Vim.command('exec "normal \<c-w>v"')
