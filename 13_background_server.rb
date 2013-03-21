@@ -1,14 +1,18 @@
 # Now that we know how to fork subprocesses, let's run a background server.
-# Shame it's still noisy.
 
 require "rack"
+require "rack/source"
 
-app = lambda do |_|
-  [200, { "Content-Type" => "text/html" }, ["<h1>Hello, VimLondon!</h1>"]]
-end
+# Syntax highlight this file.
+app = Rack::Source.new(__FILE__, lexer: :ruby)
 
 child = fork do
-  Rack::Handler::WEBrick.run(app, :Port => 1234)
+  Rack::Handler::WEBrick.run(
+    app,
+    AccessLog: [], # This just keeps WEBrick quiet.
+    Logger: WEBrick::Log::new("/dev/null", 7),
+    Port: 1234
+  )
 end
 
 Process.detach(child)
