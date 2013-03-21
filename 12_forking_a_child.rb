@@ -1,5 +1,5 @@
 # So we can't use threads. What about forking new processes?
-# This actually words.
+# This actually works.
 
 child = fork do
   1.upto(1000) do |i|
