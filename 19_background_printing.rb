@@ -23,6 +23,7 @@ child = fork do
 end
 
 Process.detach(child)
+Vim.command("autocmd VimLeave * !rm -f vimprint && kill -9 #{child}")
 
 # Read the vimprint file and actually print the results.
 def print_from_child

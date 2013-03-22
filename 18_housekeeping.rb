@@ -1,5 +1,6 @@
 # I tried to kill the child process when Vim exits.
-# Not really sure why this doesn't work.
+# Initially, I tried ruby Process.kill("SIGTERM", #{child}).
+# Not sure why that didn't work, but this does.
 
 child = fork do
   loop do
@@ -10,4 +11,4 @@ end
 
 Process.detach(child)
 
-Vim.command("autocmd VimLeave * :ruby Process.kill('SIGTERM', #{child}")
+Vim.command("autocmd VimLeave * !kill -9 #{child}")

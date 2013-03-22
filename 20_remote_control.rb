@@ -32,13 +32,14 @@ child = fork do
   )
 end
 
+Process.detach(child)
+Vim.command("autocmd VimLeave * !rm -f vimremote && kill -9 #{child}")
+
 def remote_command_execution
   commands = File.read("vimremote")
   FileUtils.rm("vimremote")
   commands.split("\n").each { |c| Vim.command(c) }
 rescue
 end
-
-Process.detach(child)
 
 Vim.command("autocmd CursorMoved * ruby remote_command_execution")
