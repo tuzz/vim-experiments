@@ -4,7 +4,7 @@
 require "rack"
 
 app = lambda do |_|
-  [200, { "Content-Type" => "text/html" }, ["<h1>Hello, VimLondon</h1>!"]]
+  [200, { "Content-Type" => "text/html" }, ["<h1>Hello, VimLondon!</h1>"]]
 end
 
 Rack::Handler::WEBrick.run(app, :Port => 1234)
