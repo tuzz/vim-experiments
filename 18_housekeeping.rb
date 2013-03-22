@@ -1,4 +1,4 @@
-# I tried to kill the child process when Vim exits.
+# This experiment demonstrates a way to kill the process when Vim exits.
 # Initially, I tried ruby Process.kill("SIGTERM", #{child}).
 # Not sure why that didn't work, but this does.
 
