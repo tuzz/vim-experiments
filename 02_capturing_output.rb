@@ -1,6 +1,6 @@
 # You can capture output by running %!ruby instead of !ruby %
 
-1.upto(100).each do |n|
+1.upto(100) do |n|
   if (n % 15).zero?
     puts "FizzBuzz"
   elsif (n % 3).zero?
