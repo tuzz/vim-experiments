@@ -52,6 +52,8 @@ class Scene
 
 end
 
-fork do
+child = fork do
   Scene.display
 end
+
+Process.detach(child)

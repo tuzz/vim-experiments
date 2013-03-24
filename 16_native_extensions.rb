@@ -4,6 +4,8 @@
 
 require "scene"
 
-fork do
+child = fork do
   Scene.display
 end
+
+Process.detach(child)
