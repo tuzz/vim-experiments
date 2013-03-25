@@ -9,5 +9,3 @@ Thread.new do
   sleep 1
   print " world"
 end
-
-print "foo"
