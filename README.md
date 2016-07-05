@@ -2,7 +2,7 @@
 
 An exploration of the capabilities and limitations of Vim's embedded Ruby. An accompaniment for the talk I gave at [VimLondon](http://www.meetup.com/Vim-London/) on March 26th, 2013. Slides are included in Keynote and PDF formats.
 
-I think it's more interesting to understand how I figured things out, rather than what was actually discovered. Therefore, I've tried to include lots of comments and outline a logical order for my thought process.
+I've tried to include lots of comments and outline a logical order for my thought process.
 
 ## Prerequisites
 
@@ -11,7 +11,3 @@ For the later examples, you'll need a version of Vim compiled with +ruby support
 ## Code Quality
 
 Most experiments were created in a single pass. They are for proof-of-concept only.
-
-## Self Promotion
-
-If you're passionate about Vim, or you're carrying out some crazy experiments of your own, you should follow me on [twitter](http://twitter.com/cpatuzzo).
